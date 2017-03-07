@@ -1,0 +1,24 @@
+// 自定义的类加上前缀 l-， 避免和其他引入的库的css参数冲突
+
+html, body {
+	margin: 0;
+	height:   100%;
+}
+
+#l-app-coninter {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.l-header {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	background-color: #263238;
+	color: #fff;
+	padding: 0 15px;
+	font-size: 20px;
+	vertical-align: middle;
+	overflow: hidden;
+}
