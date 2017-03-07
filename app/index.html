@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<!-- build:css(.tmp) scss/bootstrap.css -->
+	<link rel="stylesheet" href="scss/bootstrap.css">
+	<!-- endbuild -->
+	<!-- build:css(.tmp) scss/main.css -->
+	<link rel="stylesheet" href="scss/flat-ui.css">
+	<link rel="stylesheet" href="scss/font-awesome.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" href="scss/custom.css">
+</head>
+<body ng-app="app">
+	<div id="l-app-coninter">
+		<div class="l-header" my-header></div>
+		<div class="l-main-container">
+			<div class="l-nav"></div>
+			<div class="l-content"></div>
+		</div>
+	</div>
+
+	<!-- build:js scripts/vendor.js-->
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-ui-router.min.js"></script>
+	<script src="lib/angular-animate.min.js"></script>
+	<script src="lib/ui-bootstrap-tpls.js"></script>
+	<!-- endbuild -->
+
+	<!-- injector:js-->
+	<script src="script/app.module.js"></script>
+	<script src="script/nav/app.nav.module.js"></script>
+	<script src="script/nav/app.nav.controller.js"></script>
+	<script src="script/header/app.header.module.js"></script>
+	<script src="script/header/app.header.controller.js"></script>
+	<script src="script/header/app.header.directive.js"></script>
+	<!-- endinjector-->
+</body>
+</html>
