@@ -7,9 +7,6 @@
 	function myLogin(){
 		return {
 			replace: true,
-			templateUrl: 'script/login/app.login.html',
-			controller: 'loginController',
-			controllerAs: 'login',
 			link: link,
 		}
 	}
