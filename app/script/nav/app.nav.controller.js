@@ -6,6 +6,6 @@
 
 	function navController(){
 		var vm = this;
-		this.name = "message";
+		vm.name = "message";
 	}
 })();

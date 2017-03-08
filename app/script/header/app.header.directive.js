@@ -16,7 +16,7 @@
 		}
 
 		function link(scope, ele, attr) {
-			$rootScope.status = "指令内部的全局变量";
+			$rootScope.status = "directive";
 		}
 	}
 })();

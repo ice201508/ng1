@@ -10,6 +10,7 @@
 		//custom modules
 		'app.nav',
 		'app.header',
-	])
+		'app.login',
+	]);
 
 })();

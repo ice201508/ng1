@@ -1,10 +1,16 @@
 (function(){
-	'use strict';
 
 	angular.module('app')
-	// 	.config(f_config);
+		.config(config)
+		.run(run);
 
-	// function f_config($rootScope){
-		
-	// }
+	run.$inject = ['$rootScope'];
+
+	function config(){
+
+	}
+
+	function run($rootScope){
+		$rootScope.isLogin = false;
+	}
 })();

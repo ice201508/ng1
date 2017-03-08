@@ -21,8 +21,14 @@ gulp-inject   (自动插入静态文件到html)
 
 
 [图标库](http://fontawesome.dashgame.com/)
+[falt-ui样式库](http://designmodo.github.io/Flat-UI/docs/components.html)
 
 #### 代码书写规范
 [angular 1 的代码书写规范](https://github.com/johnpapa/angular-styleguide/tree/master/a1)
 [ui-router 使用文档](https://ui-router.github.io)
 [ui-bootstrap 使用文档](https://angular-ui.github.io/bootstrap/#!#getting_started)
+
+
+
+angular常用的技术
+延迟加载， 懒加载

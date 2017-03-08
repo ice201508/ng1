@@ -58,6 +58,8 @@ gulp.task('inject', function(){
 
 // 静态服务器 + 监听 scss/html 文件
 gulp.task('serve', ['scss'], function() {
+    gulp.watch("app/scss/**/*.scss", ['scss']);
+
     var options = {
       port: 8080,
       ghostMode: {
@@ -79,9 +81,12 @@ gulp.task('serve', ['scss'], function() {
         ]
     }
     options.files = [
+        "./app/**/*.html",
+        "./app/**/*.js",
+        ".tmp/scss/**/*.css"
     ]
     bs.init(options);
 
-    gulp.watch("app/scss/**/*.scss", ['scss']);
-    gulp.watch(["app/**/*.html", "app/**/*.js"]).on('change', bs.reload);
+    
+    //gulp.watch(["app/**/*.html", "app/**/*.js"]).on('change', bs.reload);
 });

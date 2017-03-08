@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AngularJS</title>
 	<!-- build:css(.tmp) scss/bootstrap.css -->
 	<link rel="stylesheet" href="scss/bootstrap.css">
@@ -11,12 +12,16 @@
 	<link rel="stylesheet" href="scss/font-awesome.css">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="scss/custom.css">
+	<link rel="icon" href="favicon.ico">
 </head>
 <body ng-app="app">
-	<div id="l-app-coninter">
+	<div id="l-app-coninter" ng-if="!isLogin">
+		<div class="l-login" my-login></div>
+	</div>
+	<div id="l-app-coninter" ng-if="isLogin">
 		<div class="l-header" my-header></div>
 		<div class="l-main-container">
-			<div class="l-nav"></div>
+			<div class="l-nav" my-nav></div>
 			<div class="l-content"></div>
 		</div>
 	</div>
@@ -31,11 +36,18 @@
 
 	<!-- injector:js-->
 	<script src="script/app.module.js"></script>
+	<script src="script/core/app.config.js"></script>
+	<script src="script/service/app.service.module.js"></script>
+	<script src="script/filter/app.filter.module.js"></script>
+	<script src="script/login/app.login.module.js"></script>
+	<script src="script/login/app.login.directive.js"></script>
+	<script src="script/login/app.login.controller.js"></script>
 	<script src="script/nav/app.nav.module.js"></script>
+	<script src="script/nav/app.nav.directive.js"></script>
 	<script src="script/nav/app.nav.controller.js"></script>
 	<script src="script/header/app.header.module.js"></script>
-	<script src="script/header/app.header.controller.js"></script>
 	<script src="script/header/app.header.directive.js"></script>
+	<script src="script/header/app.header.controller.js"></script>
 	<!-- endinjector-->
 </body>
 </html>
