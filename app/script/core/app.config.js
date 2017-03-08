@@ -4,10 +4,11 @@
 		.config(config)
 		.run(run);
 
+	config.$inject = ['$httpProvider'];
 	run.$inject = ['$rootScope'];
 
-	function config(){
-
+	function config($httpProvider){
+		$httpProvider.interceptors.push('bookHttpInterceptor');
 	}
 
 	function run($rootScope){

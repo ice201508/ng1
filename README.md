@@ -32,3 +32,6 @@ gulp-inject   (自动插入静态文件到html)
 
 angular常用的技术
 延迟加载， 懒加载
+
+angular要实现loading效果
+angularjs作为一个全ajax的框架，对于请求，如果页面上不做任何操作的话，在结果烦回来之前，页面是没有任何响应的，不像普通的HTTP请求，会有进度条之类
