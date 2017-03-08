@@ -15,16 +15,7 @@
 	<link rel="icon" href="favicon.ico">
 </head>
 <body ng-app="app">
-	<div id="l-app-coninter" ng-if="!isLogin">
-		<div class="l-login" my-login></div>
-	</div>
-	<div id="l-app-coninter" ng-if="isLogin">
-		<div class="l-header" my-header></div>
-		<div class="l-main-container">
-			<div class="l-nav" my-nav></div>
-			<div class="l-content"></div>
-		</div>
-	</div>
+	<ui-view></ui-view>
 
 	<!-- build:js scripts/vendor.js-->
 	<script src="lib/jquery.min.js"></script>
@@ -36,6 +27,7 @@
 
 	<!-- injector:js-->
 	<script src="script/app.module.js"></script>
+	<script src="script/core/app.route.js"></script>
 	<script src="script/core/app.config.js"></script>
 	<script src="script/core/app.http.interceptor.js"></script>
 	<script src="script/service/app.service.module.js"></script>

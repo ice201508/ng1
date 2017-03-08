@@ -4,16 +4,23 @@
 	angular.module('app')
 			.config(config);
 
-	config.$inject = ['$stateProvider', '$urlRouterProvider'];
+	config.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
-	function config($stateProvider, $urlRouterProvider){
-		$stateProvider.state('app', {
+	function config($locationProvider, $stateProvider, $urlRouterProvider){
+		$stateProvider.state('login', {
 			url: '/login',
-			templateUrl: '../login/app.login.html',
+			templateUrl: '/script/login/app.login.html',
 			controller: 'loginController',
 			controllerAs: 'login',
+		}).state('main', {
+			url: '/dashboard',
+			templateUrl: '/script/dashboard/app.dashboard.html',
+			controller: 'dashboardController',
+			controllerAs: 'dashboard',
 		})
 
 		$urlRouterProvider.otherwise('login');
+		$locationProvider.hashPrefix('');
+		$locationProvider.html5Mode(false);
 	}
 })();

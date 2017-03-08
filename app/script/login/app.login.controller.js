@@ -9,6 +9,13 @@
 	function loginController($rootScope){
 		var vm = this;
 		vm.title = "login";
+		vm.go_dashboard = go_dashboard;
+		
+		function go_dashboard(){
+			var vm = this;
+
+			console.log(11);
+		}
 	}
 
 })();
