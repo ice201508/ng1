@@ -28,6 +28,7 @@ gulp-inject   (自动插入静态文件到html)
 [ui-router 使用文档](https://ui-router.github.io)，
 [ui-router 使用文档 WIKI](https://github.com/angular-ui/ui-router/wiki/URL-Routing)，
 [ui-bootstrap 使用文档](https://angular-ui.github.io/bootstrap/#!#getting_started)，
+[restangular使用文档 WIKI](https://github.com/mgonto/restangular)，
 [angular-local-storage使用文档](https://github.com/grevory/angular-local-storage)
 
 
@@ -36,3 +37,10 @@ angular常用的技术
 
 angular要实现loading效果 
 angularjs作为一个全ajax的框架，对于请求，如果页面上不做任何操作的话，在结果烦回来之前，页面是没有任何响应的，不像普通的HTTP请求，会有进度条之类
+
+
+### 后端环境
+
+KOA vs EXPRESS
+https://expressjs.com/
+http://koajs.com/
