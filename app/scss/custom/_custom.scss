@@ -18,7 +18,13 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
+  text-align: center;
   background-color: #3498DB;
+  .l-center{
+    position: relative;
+    top: 45%;
+    color: #fff;
+  }
 }
 
 #l-app-coninter {
@@ -36,7 +42,29 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  background-color: #1ABC9C;
+  overflow: auto;
+  color: #fff;
+  padding: 3em;
+  text-align: center;
+  // background-color: #1ABC9C;
+  background-color: #222;
+  .input-underline {
+    border: 0;
+    background: 0;
+    box-shadow: none;
+    border-bottom: 2px solid hsla(0, 0%, 100%, 0.5);
+    color: #fff;
+    border-radius: 0;
+  };
+  .l-form-content{
+    padding: 40px 0 ;
+  };
+  .l-btn-content{
+    a {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
 }
 
 .l-header {

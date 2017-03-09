@@ -16,7 +16,11 @@
 </head>
 <body ng-app="app">
   <!-- <div id="l-loading" has-loading></div> -->
-  <div id="l-loading" ng-if="!isFinishedLoading"></div>
+  <div id="l-loading" ng-if="!isFinishedLoading && !isLogin">
+    <div class="l-center">
+      <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+    </div>
+  </div>
   <ui-view></ui-view>
 
   <!-- build:js scripts/vendor.js-->

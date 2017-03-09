@@ -12,6 +12,6 @@
   }
 
   function link(scope, ele, attr){
-    
+    console.log("进入指令");
   }
 })();
