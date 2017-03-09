@@ -1,5 +1,5 @@
 (function(){
   'use strict';
 
-  angular.module('app.filter', []);
+  angular.module('app.chart', []);
 })();

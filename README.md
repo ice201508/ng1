@@ -5,7 +5,7 @@
 
 工具 gulp+angular1
 
-npm install jquery angular angular-ui-router angular-animate angular-ui-bootstrap bootstrap-sass flat-ui font-awesome --save
+npm install jquery angular angular-ui-router angular-animate angular-local-storage angular-ui-bootstrap bootstrap-sass flat-ui font-awesome --save
 npm install gulp gulp-load-plugins  browser-sync gulp-plumber gulp-autoprefixer gulp-sass gulp-sourcemaps gulp-useref gulp-if gulp-rev gulp-rev-replace gulp-csso gulp-inject gulp-clean gulp-uglify  --save-dev
 
 gulp-plumber   (捕获处理任务中的错误)
@@ -28,7 +28,7 @@ gulp-inject   (自动插入静态文件到html)
 [ui-router 使用文档](https://ui-router.github.io)，
 [ui-router 使用文档 WIKI](https://github.com/angular-ui/ui-router/wiki/URL-Routing)，
 [ui-bootstrap 使用文档](https://angular-ui.github.io/bootstrap/#!#getting_started)，
-
+[angular-local-storage使用文档](https://github.com/grevory/angular-local-storage)
 
 
 angular常用的技术

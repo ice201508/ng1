@@ -1,21 +1,24 @@
 (function(){
-	'use strict';
+  'use strict';
 
-	angular.module('app.login')
-			.controller('loginController', loginController);
+  angular.module('app.login')
+      .controller('loginController', loginController);
 
-	loginController.$inject = ['$rootScope'];
+  loginController.$inject = ['$rootScope', '$state', 'bookStorageService'];
 
-	function loginController($rootScope){
-		var vm = this;
-		vm.title = "login";
-		vm.go_dashboard = go_dashboard;
-		
-		function go_dashboard(){
-			var vm = this;
+  function loginController($rootScope, $state, bookStorageService){
+    var vm = this;
+    vm.title = "login";
+    vm.go_main_state = go_main_state;
+    
+    function go_main_state(){
+      var vm = this;
 
-			console.log(11);
-		}
-	}
+      bookStorageService.userLoginSet(true);
+      $rootScope.isLogin = bookStorageService.userLoginGet();
+      $state.go('main.dashboard');
+    }
+
+  }
 
 })();

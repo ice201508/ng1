@@ -15,8 +15,9 @@
 		}
 
 		function request(config){
-			console.log(config);
-			return config
+			console.log("页面请求拦截器:  ", config);
+			//return config
+			return $q.resolve(config);
 		}
 
 		function requestError(rejection){
@@ -25,7 +26,7 @@
 		}
 
 		function response(response){
-			console.log(response);
+			//console.log(response);
 			return response;
 		}
 
