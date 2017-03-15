@@ -19,6 +19,9 @@ gulp-inject   (自动插入静态文件到html)
 
 编译scss，合并js/css，压缩js/css，加md5，注入index.html
 
+bower/npm 都可以安装的库
+图表使用： npm install chart.js angular-chart.js --save  
+
 
 [图标库](http://fontawesome.dashgame.com/)
 [falt-ui样式库](http://designmodo.github.io/Flat-UI/docs/components.html)
