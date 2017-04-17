@@ -39,7 +39,7 @@ angular常用的技术
 延迟加载， 懒加载, $ocLazyLoad
 
 angular要实现loading效果 
-angularjs作为一个全ajax的框架，对于请求，如果页面上不做任何操作的话，在结果烦回来之前，页面是没有任何响应的，不像普通的HTTP请求，会有进度条之类
+angularjs作为一个全ajax的框架，对于请求，如果页面上不做任何操作的话，在结果返回来之前，页面是没有任何响应的，不像普通的HTTP请求，会有进度条之类
 
 
 ### 后端环境
@@ -47,3 +47,11 @@ angularjs作为一个全ajax的框架，对于请求，如果页面上不做任�
 KOA vs EXPRESS
 https://expressjs.com/
 http://koajs.com/
+
+
+### 开发环境搭建
+npm install
+gulp copy --> 手动更改sass目录 修改icon路径
+
+
+问题： 绝对定位的元素bottom为0的时候会定位到屏幕底部，没有定位到文档的最底部

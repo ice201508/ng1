@@ -9,13 +9,15 @@
     'LocalStorageModule',
 
     //custom modules
+    'app.service',
+    'app.filter',
     'app.nav',
     'app.header',
     'app.login',
     'app.dashboard',
-    'app.chart',
-    'app.service',
-    'app.filter',
+    'app.edit',
+    'app.user',
+    'app.order',
   ]);
 
 })();
