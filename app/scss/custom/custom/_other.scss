@@ -1,0 +1,72 @@
+.margin-center {
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+
+.ui-rating {
+  color: #1abc9c;
+  font-size: 22px;
+  span {
+    outline: none;
+  }
+}
+
+//http://designmodo.github.io/Flat-UI/#  常用颜色
+
+.color-primary {
+  color: $color-primary;
+}
+.color-success {
+  color: $color-success;
+}
+.color-info {
+  color: $color-info;
+}
+.color-warning {
+  color: $color-warning;
+}
+.color-danger {
+  color: $color-danger;
+}
+.color-inverse {
+  color: $color-inverse;
+}
+.color-midnight {
+  color: $color-midnight;
+}
+.color-default {
+  color: $color-default;
+}
+.color-disabled {
+  color: $color-disabled;
+}
+
+.background-color-primary {
+  background-color: $color-primary;
+}
+.background-color-success {
+  background-color: $color-success;
+}
+.background-color-info {
+  background-color: $color-info;
+}
+.background-color-warning {
+  background-color: $color-warning;
+}
+.background-color-danger {
+  background-color: $color-danger;
+}
+.background-color-inverse {
+  background-color: $color-inverse;
+}
+.background-color-midnight {
+  background-color: $color-midnight;
+}
+.background-color-default {
+  background-color: $color-default;
+}
+.background-color-disabled {
+  background-color: $color-disabled;
+}

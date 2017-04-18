@@ -1,0 +1,65 @@
+//页面的整个布局
+// 自定义的类加上前缀 l-， 避免和其他引入的库的css参数冲突
+
+html, body{
+  height: 100%;
+}
+
+body {
+  word-break: break-all;
+  word-wrap: break-word;
+  font-family: "Microsoft YaHei", "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+
+#l-app-coninter {
+  font-size: 14px;
+  height: 100%;
+}
+
+.l-header{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 1000;
+  background-color: #263238;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 20px;
+  vertical-align: middle;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+  &.header {
+    line-height: 50px;
+  }
+}
+
+.l-main-container {
+  display: block;
+  position: relative;
+  overflow: auto;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  .l-nav{
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    width: 200px;
+    padding: 5px 10px;
+    overflow: auto;
+    height: 100%;
+    background-color: #263238;
+  }
+  .l-content {
+    position: relative;
+    left: 200px;
+    margin-right: 200px;
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+.page {
+  padding: 15px;
+}

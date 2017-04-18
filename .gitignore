@@ -3,4 +3,6 @@
 /dist
 /app/assets
 /app/lib
-/app/scss
+/app/scss/bootstrap/
+/app/scss/flat-ui.scss
+/app/scss/font-awesome.scss

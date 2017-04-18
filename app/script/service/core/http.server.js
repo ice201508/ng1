@@ -12,6 +12,7 @@
 
     //封装http服务
     function http(config){
+      console.log('config: ',config);
       var defer = $q.defer();
 
       function success(res){

@@ -1,0 +1,32 @@
+.l-margin-bottom {
+  margin-bottom: 20px;
+}
+
+.first-line-panel {
+  .icon-title{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0 15px 0 0;
+    font-size: 32px;
+    line-height: 70px;
+    color: #fff;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    i {
+      line-height: 70px;
+    }
+  }
+  .text-title {
+    display: inline-block;
+    vertical-align: top;
+    .num-title{
+      font-size: 27px;
+    }
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}
