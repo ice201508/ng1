@@ -2,22 +2,30 @@
   <div class="l-login" my-login>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <div class="">
-          <span class="fa fa-user fa-5x"></span>
+        <div>
+          <p><span class="fa fa-user fa-5x"></span></p>
+          <h4 ng-show="isRegistry">测试</h4>
+          <h4 ng-show="!isRegistry">ceshi</h4>
         </div>
-        <h4>网上书店登录</h4>
         <form>
           <div class="l-form-content">
             <div class="form-group">
-              <input class="form-control input-lg input-underline" type="text" placeholder="Email">
+              <input class="form-control input-lg input-underline" type="text" placeholder="邮箱">
+            </div>
+            <div class="form-group l-auth-get" ng-show="isRegistry">
+                <input class="form-control auth-input input-underline" type="text" placeholder="验证码">
+                <button class="btn btn-primary auth-button" ng-click="vmLogin.getAuthCode()">获取验证码</button>
             </div>
             <div class="form-group">
-              <input class="form-control input-lg input-underline" type="text" placeholder="Password">
+              <input class="form-control input-lg input-underline" type="password" placeholder="Password">
             </div>
           </div>
-          <div class="l-btn-content">
-            <button class="btn btn-primary btn-sm" ng-click="vmLogin.go_main_state()">Log in</button>
-            <button class="btn btn-primary btn-sm">Register</button>
+          <div class="l-btn-content" ng-show="!isRegistry">
+            <button class="btn btn-primary btn-sm" ng-click="vmLogin.go_main_state()">登录</button>
+            <button class="btn btn-primary btn-sm" ng-click="vmLogin.registry()">注册</button>
+          </div>
+          <div class="l-btn-content" ng-show="isRegistry">
+            <button class="btn btn-primary btn-sm" ng-click="vmLogin.go_main_state()">确定</button>
           </div>
         </form>
       </div>

@@ -19,7 +19,10 @@
 
     $rootScope.$on('$stateChangeStart', stateChangeStart);
     $rootScope.$on('$stateChangeSuccess', loginChangeSuccess);
+    //初始化是否加载完成
     $rootScope.isFinishedLoading = false;
+    //是否是注册界面
+    $rootScope.isRegistry = false;
 
     function stateChangeStart(event, toState, toParams, fromState, fromParams, options){
       console.log("路由跳转和拦截器哪个先执行,这里是路由跳转  ", toState.url);
