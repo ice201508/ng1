@@ -7,10 +7,20 @@
     loginService.$inject = ['$h'];
     function loginService($h){
         return {
-          getAuthCode: getAuthCode
+          getAuthCode: getAuthCode,
+          registry: registry,
+          login: login,
         }
 
         function getAuthCode(config){
+          return $h.http(config);
+        }
+
+        function registry(config){
+          return $h.http(config);
+        }
+
+        function login(config){
           return $h.http(config);
         }
     }

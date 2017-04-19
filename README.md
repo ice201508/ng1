@@ -33,7 +33,8 @@ bower/npm 都可以安装的库
 [ui-bootstrap 使用文档](https://angular-ui.github.io/bootstrap/#!#getting_started)，
 [restangular使用文档 WIKI](https://github.com/mgonto/restangular)，
 [angular-local-storage使用文档](https://github.com/grevory/angular-local-storage)
-
+[chartjs文档](//http://jtblin.github.io/angular-chart.js/)
+[momentjs 时间库](http://momentjs.cn/)
 
 angular常用的技术
 延迟加载， 懒加载, $ocLazyLoad

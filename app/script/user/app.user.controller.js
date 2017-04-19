@@ -7,7 +7,14 @@
     orderController.$inject = []
     function orderController(){
       var vm =this;
-      vm.message="user22222222";
-      console.log('user');
+      vm.users = [
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+        {project: 'TWLT', status: 'pending', manager: 'Amery lee', progress: '45%'},
+      ]
     }
 })();

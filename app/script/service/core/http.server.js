@@ -41,12 +41,13 @@
         case 'GET':
           _config['method'] = config['method'];
           _config['url'] = config['url'];
-          _config['params'] = config['param'];
+          _config['params'] = config['param']? config['param']:'';
           break;
         case 'POST':
-          config['method'] = method;
+          _config['method'] = config['method'];
           _config['url'] = config['url'];
-          config['data'] = param;
+          _config['params'] = config['param']? config['param']:'';
+          _config['data'] = config['param'] ? config['param'] : '';
           break;
         default:
             break;
