@@ -10,6 +10,8 @@
     return {
       userLoginSet: userLoginSet,
       userLoginGet: userLoginGet,
+      loginAuthCodeCookieSet: loginAuthCodeCookieSet,
+      loginAuthCodeCookieGet: loginAuthCodeCookieGet,
     }
 
     function userLoginSet(param){
@@ -21,6 +23,18 @@
     function userLoginGet(){
       if(localStorageService.isSupported){
         return localStorageService.get('isLogin');
+      }
+    }
+
+    function loginAuthCodeCookieSet(param){
+      if(localStorageService.cookie.isSupported){
+        return localStorageService.cookie.set('auth_code_confirm', param, 0.1, false);
+      }
+    }
+
+    function loginAuthCodeCookieGet(){
+      if(localStorageService.cookie.isSupported){
+        return localStorageService.cookie.get('auth_code_confirm');
       }
     }
   }

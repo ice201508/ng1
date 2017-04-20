@@ -4,25 +4,28 @@
   angular.module('app.login')
       .controller('loginController', loginController);
 
-  loginController.$inject = ['$interval', '$rootScope', '$state', 'bookStorageService', 'loginService'];
+  loginController.$inject = ['$scope', '$interval', '$rootScope', '$state', 'bookStorageService', 'loginService', '$h'];
 
-  function loginController($interval, $rootScope, $state, bookStorageService, loginService){
+  function loginController($scope, $interval, $rootScope, $state, bookStorageService, loginService, $h){
     var vm = this;
-    vm.getAuthCodeStart = false;
     vm.userInfo = {};
     vm.go_main_state = go_main_state;
     vm.registry = registry;
+    vm.go_back = go_back;
+    vm.getAuthCodeStart = false;
     vm.getAuthCode = getAuthCode;
 
     function go_main_state(){
       var vm = this;
+      console.log('this: ', this);
+      console.log('$scope: ', $scope);
       var config = {
         method: 'POST',
         url: 'http://127.0.0.1:3005/login',
         data: vm.userInfo,
       }
       if($rootScope.isRegistry){
-        vm.userInfo.auth_code_confirm = "953F0E1HB796E408H501";
+        vm.userInfo.auth_code_confirm = bookStorageService.loginAuthCodeCookieGet();
         loginService.login(config)
           .then(function(data){
             console.log('data: ',data);
@@ -51,6 +54,15 @@
       var vm = this;
       $rootScope.isRegistry = true;
       vm.userInfo.password = '';
+      var config = {
+        method: 'GET',
+        url: 'http://127.0.0.1:3005/getinfo',
+        params: {data: Date.now()},
+      }
+      $h.http(config)
+        .then(function(data){
+          console.log('data: ',data);
+        })
     }
 
     function go_back(){
@@ -77,6 +89,7 @@
       loginService.getAuthCode(config)
         .then(function(data){
           vm.userInfo.auth_code_confirm = data.auth_code_confirm
+          bookStorageService.loginAuthCodeCookieSet(data.auth_code_confirm)
           console.log('success: ',data);
         })
         .catch(function(e){

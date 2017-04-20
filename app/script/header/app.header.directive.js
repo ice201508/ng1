@@ -9,14 +9,14 @@
 	function myHeader($rootScope){
 		return {
 			replace: 'true',
-			templateUrl: 'script/header/app.header.html',
-			controller: 'headerController',
-			controllerAs: 'head',
+			//templateUrl: 'script/header/app.header.html',
+			//controller: 'headerController',
+			//controllerAs: 'head',
 			link: link,
 		}
 
 		function link(scope, ele, attr) {
-			$rootScope.status = "directive";
+			console.log('header指令');
 		}
 	}
 })();

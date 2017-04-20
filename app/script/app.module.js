@@ -7,6 +7,7 @@
     'ngAnimate',
     'ui.bootstrap',
     'LocalStorageModule',
+    'angularFileUpload',
 
     //custom modules
     'app.service',

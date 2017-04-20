@@ -9,16 +9,10 @@
 
 	function headerController($filter, $timeout){
 		var vm = this;
-		vm.name = "message";
-		vm.get_name = get_name;
-		vm.alerts = [
-			{ type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-			{ type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-		];
-
-		function get_name(){
-			console.log(vm.name);
+		vm.status = {
+			isopen: false
 		}
+		vm.ele = angular.element(document.querySelector('.l-header'));
 
 		$timeout(function(){
 			console.log('注入')

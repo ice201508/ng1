@@ -1,5 +1,32 @@
-<div class="header">
-	<div class="col-xs-3">
-		<a href="#/" style="font-size: 24px;">Admin</a>
-	</div>
+<div ng-controller="headerController as vmHeader" my-header>
+  <div class="line-height-50 clearfix">
+    <div class="pull-left">
+      <div class="title">
+        <a href="#/" class="title-font-24">Admin</a>
+      </div>
+    </div>
+    <div class="pull-left">
+      <div class="dropdown" uib-dropdown>
+        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+          <i class="fa fa-comment-o"></i>
+          <span class="badge badge-info"></span>
+        </a>
+        <div class="dropdown-menu bg-dropdown" uib-dropdown-menu>
+          <p>212</p>
+          <p>212</p>
+          <p>212</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="message-first">
+      <div uib-dropdown is-open="vmHeader.status.isopen">
+        <button type="button" class="btn btn-primary" uib-dropdown-toggle>消息<i class="caret"></i></button>
+        <ul class="dropdown-menu" uib-dropdown-menu>
+          <li>123</li>
+          <li>123</li>
+          <li>323</li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
 </div>
