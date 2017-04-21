@@ -1,26 +1,21 @@
 (function(){
   'use strict';
 
-  angular.module('app.edit')
+  angular.module('app.book')
     .controller('editController', editController);
 
-    editController.$inject = ['$scope', '$sce', '$h', 'logger', 'FileUploader'];
+    editController.$inject = ['$scope', '$sce', '$state', '$timeout', '$h', 'logger', 'FileUploader'];
 
-    function editController($scope, $sce,$h, logger, FileUploader){
+    function editController($scope, $sce, $state, $timeout, $h, logger, FileUploader){
       var vm = this;
 
       vm.book_detail = {};
       vm.submit = submit;
       vm.uploader = new FileUploader({
         url: 'http://upload.qiniu.com',
-        autoUpload: true,
-        filters: [{
-          name: 'one_file',
-          fn: function(item){
-            return item.queueLimit =1
-          }
-        }]
       });
+      vm.book_detail.imgUrl = '';
+      vm.book_detail.imgTitle = '书籍';
       vm.book_detail.rate = 7;
       vm.max = 10;
       vm.isReadonly = false;
@@ -31,25 +26,30 @@
       };
       vm.uploadToQiniu = uploadToQiniu;
 
-      function uploadToQiniu(){
+      function uploadToQiniu(files){
+        console.log('file: ', files);
         $h.http({
           method: 'GET',
           url:'http://127.0.0.1:3005/upload/qiniu_token',
         }).then(function(data){
           var formData = new FormData();
-          formData.append('file', document.querySelector('#self-qiniu-upload').files[0]);
+          formData.append('file', files[0]);
           formData.append('token', data.token);
+          $timeout(function(){
+            console.log('formData: ', formData);
+          })
+          
           $h.http({
             method: 'POST',
             url: 'http://upload.qiniu.com',
             data: formData,
-            processData: false,
-            contentType: false,
+            //post默认的请求头部content-type是application/json, 不用指定multipart/form-data
+            headers: {'Content-Type':undefined},
           }).then(function(data){
-            var imgUrl = "oopbykx1v.bkt.clouddn.com" +data.key
-            logger.success(imgUrl)
+            vm.book_detail.imgUrl = "http://oopbykx1v.bkt.clouddn.com/" +data.key
+            logger.success('上传成功')
           }).catch(function(e){
-            console.log('e: ',e);
+            logger.error('上传失败')
           })
         })
         .catch(function(e){
@@ -76,11 +76,20 @@
       }
 
       function submit(){
-        logger.info('提示成功');
-        logger.success('提示成功');
-        logger.error('提示成功');
-        logger.warning('提示成功');
         console.log('vm.book_detail: ',vm.book_detail);
+        var config = {
+          method: 'POST',
+          url: 'http://127.0.0.1:3005/book/edit',
+          data: vm.book_detail,
+        }
+        $h.http(config)
+          .then(function(data){
+            logger.success('添加书籍成功');
+            $state.go('main.book.all_book_info');
+          })
+          .catch(function(e){
+            logger.error('添加书籍出错')
+          })
       }
     }
 })();

@@ -4,9 +4,9 @@
   angular.module('app.login')
       .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', '$interval', '$rootScope', '$state', 'bookStorageService', 'loginService', '$h'];
+  loginController.$inject = ['$scope', '$interval', '$rootScope', '$state', 'bookStorageService', 'loginService', '$h', 'logger'];
 
-  function loginController($scope, $interval, $rootScope, $state, bookStorageService, loginService, $h){
+  function loginController($scope, $interval, $rootScope, $state, bookStorageService, loginService, $h, logger){
     var vm = this;
     vm.userInfo = {};
     vm.go_main_state = go_main_state;
@@ -28,24 +28,24 @@
         vm.userInfo.auth_code_confirm = bookStorageService.loginAuthCodeCookieGet();
         loginService.login(config)
           .then(function(data){
-            console.log('data: ',data);
+            logger.success('注册成功，并登录');
             bookStorageService.userLoginSet(true);
             $rootScope.isLogin = bookStorageService.userLoginGet();
             $state.go('main.dashboard');
           })
           .catch(function(e){
-            console.log('e: ',e);
+            logger.error(e.message);
           })
-        } else {
+      } else {
           loginService.login(config)
           .then(function(data){
-            console.log('data: ',data);
+            logger.success(data.message);
             bookStorageService.userLoginSet(true);
             $rootScope.isLogin = bookStorageService.userLoginGet();
             $state.go('main.dashboard');
           })
           .catch(function(e){
-            console.log('e: ',e);
+            logger.error(e.message);
           })
         }
     }
@@ -55,13 +55,13 @@
       $rootScope.isRegistry = true;
       vm.userInfo.password = '';
       var config = {
-        method: 'GET',
-        url: 'http://127.0.0.1:3005/getinfo',
+        method: 'POST',
+        url: 'http://127.0.0.1:3005/registry',
         params: {data: Date.now()},
       }
       $h.http(config)
         .then(function(data){
-          console.log('data: ',data);
+          
         })
     }
 
@@ -88,9 +88,9 @@
       },1000)
       loginService.getAuthCode(config)
         .then(function(data){
+          logger.success("验证码已发送");
           vm.userInfo.auth_code_confirm = data.auth_code_confirm
           bookStorageService.loginAuthCodeCookieSet(data.auth_code_confirm)
-          console.log('success: ',data);
         })
         .catch(function(e){
           console.log('err: ',e);

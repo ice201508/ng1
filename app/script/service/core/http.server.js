@@ -25,10 +25,11 @@
       }
       function error(res){
         var data = res.data;
-        defer.reject({message: data});
+        defer.reject(data);
       }
 
       var _config = _extend(config);
+      console.log('config: ',config);
       $http(_config).then(success, error);
 
       return defer.promise;
@@ -47,7 +48,7 @@
           _config['method'] = config['method'];
           _config['url'] = config['url'];
           _config['params'] = config['param']? config['param']:'';
-          _config['data'] = config['param'] ? config['param'] : '';
+          _config['data'] = config['data'] ? config['data'] : '';
           break;
         default:
             break;

@@ -48,6 +48,12 @@ angularjs作为一个全ajax的框架，对于请求，如果页面上不做任�
 [log(toast)提示插件](https://github.com/CodeSeven/toastr)
 tooltips插件
 
+
+自定义上传的控件
+angualrjs  input type=file 里面的ngchange不会有效果，需要点特殊的手段
+还有设置post请求头 headers: {'Content-Type':undefined},这样浏览器不仅帮我们把Content-Type 设置为 multipart/form-data，还填充上当前的boundary,不能设置'Multipart/form-data'
+
+
 ### 后端环境
 
 KOA vs EXPRESS

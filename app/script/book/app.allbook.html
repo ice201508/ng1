@@ -1,0 +1,38 @@
+<div class="page">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <i class="fa fa-pencil fa-1x"></i>
+          <span>书籍列表</span>
+          <span><button class="btn btn-primary" ng-click="vmAllBook.addNewBook()">新增</button></span>
+        </div>
+        <div class="panel-body table-responsive" ng-if="vmAllBook.books.length >0">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>书名</th>
+                <th>简介</th>
+                <th>价格</th>
+                <th>图片</th>
+                <th>创建时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in vmAllBook.books track by $index" ng-click="vmAllBook.selectOne(item.bid)">
+                <th>{{$index+1}}</th>
+                <th>{{item.bname}}</th>
+                <th>{{item.intro}}</th>
+                <th>{{item.price}}</th>
+                <th>{{item.img_url}}</th>
+                <th>{{item.create_time}}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

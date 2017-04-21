@@ -35,11 +35,26 @@
       controller: 'userController',
       controllerAs: 'vmUser',
     })
-    .state('main.edit', {
-      url: '/book/edit',
-      templateUrl: 'script/edit/app.edit.html',
+    .state('main.book', {
+      template: '<div ui-view></div>'
+    })
+    .state('main.book.edit_book_info',{
+      url: '/book/letter/edit',
+      templateUrl: 'script/book/app.edit.html',
       controller: 'editController',
       controllerAs: 'vmEdit',
+    })
+    .state('main.book.all_book_info',{
+      url: '/book/letter/info',
+      templateUrl: 'script/book/app.allbook.html',
+      controller: 'allBookController',
+      controllerAs: 'vmAllBook',
+    })
+    .state('main.book.one_book_info',{
+      url: '/book/letter/:bookid',
+      templateUrl: 'script/book/app.onebook.html',
+      controller: 'oneBookController',
+      controllerAs: 'vmOneBook',
     })
 
     $urlRouterProvider.otherwise('/login');

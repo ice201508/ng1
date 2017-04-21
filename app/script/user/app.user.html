@@ -11,19 +11,19 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Project</th>
-                <th>Status</th>
-                <th>Manager</th>
-                <th>Progress</th>
+                <th>Email</th>
+                <th>用户名</th>
+                <th>电话</th>
+                <th>创建时间</th>
               </tr>
             </thead>
             <tbody>
               <tr ng-repeat="item in vmUser.users track by $index">
-                <th>{{$index}}</th>
-                <th>{{item.project}}</th>
-                <th>{{item.status}}</th>
-                <th>{{item.manager}}</th>
-                <th>{{item.progress}}</th>
+                <th>{{$index+1}}</th>
+                <th>{{item.email}}</th>
+                <th>{{item.uname}}</th>
+                <th>{{item.phone}}</th>
+                <th>{{item.create_time}}</th>
               </tr>
             </tbody>
           </table>

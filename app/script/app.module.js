@@ -16,7 +16,7 @@
     'app.header',
     'app.login',
     'app.dashboard',
-    'app.edit',
+    'app.book',
     'app.user',
     'app.order',
   ]);

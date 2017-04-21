@@ -30,8 +30,7 @@
       if(toState.url != "/login") {
         if(!$rootScope.isLogin){
           event.preventDefault()
-          console.log('event:  ', event, toState.url, fromState);
-          alert('请登录');
+          //console.log('event:  ', event, toState.url, fromState);
           $state.go('login');
         }
       }
