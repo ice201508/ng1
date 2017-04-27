@@ -17,6 +17,7 @@ module.exports = function(){
             'node_modules/angular-local-storage/dist/angular-local-storage.min.js',
             'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
             'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+            'node_modules/angular-file-upload/dist/angular-file-upload.min.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/toastr/build/toastr.min.js',
             'node_modules/chart.js/dist/chart.min.js',
