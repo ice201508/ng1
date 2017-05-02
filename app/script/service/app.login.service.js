@@ -1,4 +1,4 @@
-(function(){
+;(function(){
   'use strict';
 
   angular.module('app.service')
@@ -24,4 +24,4 @@
           return $h.http(config);
         }
     }
-})()
+})();

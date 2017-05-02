@@ -7,20 +7,20 @@
           <h4 ng-show="isRegistry">测试</h4>
           <h4 ng-show="!isRegistry">ceshi</h4>
         </div>
-        <form>
+        <div>
           <div class="l-form-content">
             <div class="form-group">
               <input class="form-control input-lg input-underline" type="text" placeholder="邮箱" ng-model="vmLogin.userInfo.email">
             </div>
             <div class="form-group l-auth-get" ng-show="isRegistry">
                 <input class="form-control auth-input input-underline" type="text" placeholder="验证码" ng-model="vmLogin.userInfo.auth_code">
-                <button class="btn btn-primary auth-button" ng-click="vmLogin.getAuthCode()" ng-disabled="vmLogin.getAuthCodeStart">
+                <button class="btn btn-primary auth-button" ng-click="vmLogin.getAuthCode()" ng-disabled="vmLogin.getAuthCodeStart" name="getAuthCode">
                   <span ng-show="!vmLogin.getAuthCodeStart">获取验证码</span>
                   <span ng-show="vmLogin.getAuthCodeStart">{{vmLogin.leftTime}}</span>
                 </button>
             </div>
             <div class="form-group">
-              <input class="form-control input-lg input-underline" type="password" placeholder="Password" ng-model="vmLogin.userInfo.password">
+              <input class="form-control input-lg input-underline" name="inputPassword" type="password" placeholder="Password" ng-model="vmLogin.userInfo.password" ng-keypress="vmLogin.loginKeypress($event)">
             </div>
           </div>
           <div class="l-btn-content" ng-show="!isRegistry">
@@ -31,7 +31,7 @@
             <button class="btn btn-primary btn-sm" ng-click="vmLogin.go_main_state()">注册</button>
             <button class="btn btn-primary btn-sm" ng-click="vmLogin.go_back()">返回</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

@@ -22,7 +22,23 @@ module.exports = function(){
             'node_modules/toastr/build/toastr.min.js',
             'node_modules/chart.js/dist/chart.min.js',
             'node_modules/angular-chart.js/dist/angular-chart.min.js',
-        ]
+        ],
+        scss_min: [
+            'app/scss/**/*.scss',
+            'app/scss/toastr.min.css',
+        ],
+        html: [
+            'app/script/login/app.login.html',
+            'app/script/header/app.header.html',
+            'app/script/nav/app.nav.html',
+            'app/script/core/main.html',
+            'app/script/dashboard/app.dashboard.html',
+            'app/script/order/app.order.html',
+            'app/script/user/app.user.html',
+            'app/script/book/app.edit.html',
+            'app/script/book/app.onebook.html',
+            'app/script/book/app.allbook.html',
+        ],
     }
 
     return config;

@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AngularJS</title>
+  <link rel="icon" href="favicon.ico">
   <!-- build:css(.tmp) scss/bootstrap.css -->
   <link rel="stylesheet" href="scss/bootstrap.css">
   <!-- endbuild -->
   <!-- build:css(.tmp) scss/main.css -->
   <link rel="stylesheet" href="scss/flat-ui.css">
   <link rel="stylesheet" href="scss/font-awesome.css">
-  <!-- endbuild -->
-  <link rel="stylesheet" href="scss/custom.css">
   <link rel="stylesheet" href="scss/toastr.min.css">
-  <link rel="icon" href="favicon.ico">
+  <!-- endbuild -->
+  <!-- build:css(.tmp) scss/custom.css -->
+  <link rel="stylesheet" href="scss/custom.css">
+  <!-- endbuild -->
 </head>
 <body ng-app="app">
   <!-- <div id="l-loading" has-loading></div> -->
@@ -24,7 +26,7 @@
   </div>
   <ui-view></ui-view>
 
-  <!-- build:js scripts/vendor.js-->
+  <!-- build:js script/vendor.js-->
   <script src="lib/jquery.min.js"></script>
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-ui-router.min.js"></script>
@@ -36,8 +38,7 @@
   <script src="lib/toastr.min.js"></script>
   <script src="lib/angular-file-upload.min.js"></script>
   <!-- endbuild -->
-
-  <!-- injector:js-->
+  <!-- build:js script/app.js-->
   <script src="script/app.module.js"></script>
   <script src="script/core/app.route.js"></script>
   <script src="script/core/app.config.js"></script>
@@ -68,6 +69,6 @@
   <script src="script/book/app.edit.controller.js"></script>
   <script src="script/book/app.onebook.controller.js"></script>
   <script src="script/book/app.allbook.controller.js"></script>
-  <!-- endinjector-->
+  <!-- endbuild-->
 </body>
 </html>

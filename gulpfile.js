@@ -4,7 +4,7 @@ var bs = require('browser-sync').create();
 var config = require('./gulp.config')();
 
 gulp.task('clean', function(){
-  return gulp.src('.tmp',{read: false})
+  return gulp.src(['.tmp', 'dist'],{read: false})
             .pipe($.clean())
 })
 
@@ -35,24 +35,46 @@ gulp.task('scss', function(){
             .pipe($.autoprefixer())
             .pipe($.sourcemaps.write())
             .pipe(gulp.dest('.tmp/scss/'))
-            //.pipe(bs.stream());
 })
 
-
 gulp.task('scss_min', function(){
-  return gulp.src('app/scss/**/*.scss')
+  return gulp.src(config.scss_min)
             .pipe($.plumber())
             .pipe($.sass({outputStyle: 'compressed'}))
             .pipe($.autoprefixer())
             .pipe(gulp.dest('.tmp/scss/'))
 })
 
-gulp.task('inject', function(){
+gulp.task('copy_assets_dist', function(){
+  return gulp.src(config.font)
+            .pipe(gulp.dest('dist/assets/fonts/'))
+})
+gulp.task('copy_favicon_dist', function(){
+  return gulp.src('app/favicon.ico')
+            .pipe(gulp.dest('dist'))
+})
+gulp.task('copy_html', function(){
+    var options = {
+        removeComments: true,  //清除html注释
+        collapseWhitespace: true, //压缩html
+        minifyJS: true, //压缩页面js
+        minifyCSS: true, //压缩页面css
+    }
+    return gulp.src(config.html, {base: 'app'})
+            .pipe($.htmlmin(options))
+            .pipe(gulp.dest('dist'))
+})
+
+gulp.task('build', ['scss_min', 'copy_assets_dist', 'copy_html', 'copy_favicon_dist'], function(){
   return gulp
       .src('app/index.html')
-      //.pipe($.useref())
-      .pipe($.inject(gulp.src(config.lib), {relative: true}))
-      .pipe(gulp.dest('dist'));
+      .pipe($.useref())
+      .pipe($.if('*.js', $.uglify()))
+      .pipe($.if('script/app.js', $.rev()))
+      .pipe($.if('*.css', $.csso()))
+      .pipe($.if('*scss/custom.css', $.rev()))
+      .pipe($.revReplace())
+      .pipe(gulp.dest('dist'))
 })
 
 
@@ -86,7 +108,4 @@ gulp.task('serve', ['scss'], function() {
         ".tmp/scss/**/*.css"
     ]
     bs.init(options);
-
-    
-    //gulp.watch(["app/**/*.html", "app/**/*.js"]).on('change', bs.reload);
 });
