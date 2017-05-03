@@ -39,10 +39,11 @@
     function loginChangeSuccess(event, toState, toParams, fromState, fromParams){
       if(toState.url == '/login') {
         console.log('切换到登录login界面成功:  ', toState);
+        $rootScope.isFinishedLoading = true;
         
-        $timeout(function(){
-          $rootScope.isFinishedLoading = true;
-        },3000);
+        // $timeout(function(){
+        //   $rootScope.isFinishedLoading = true;
+        // },3000);
       }
     }
   }

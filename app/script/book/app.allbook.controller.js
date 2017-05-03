@@ -4,9 +4,9 @@
     angular.module('app.book')
         .controller('allBookController', allBookController);
 
-    allBookController.$inject = ['$h', 'logger', '$state'];
+    allBookController.$inject = ['$h', 'logger', '$state', 'constService'];
 
-    function allBookController($h, logger, $state){
+    function allBookController($h, logger, $state, constService){
         var vm = this;
         vm.books = [];
         vm.addNewBook = addNewBook;
@@ -23,7 +23,7 @@
         function getAllBook(){
             var config = {
                 method: 'GET',
-                url: 'http://127.0.0.1:3005/book/allbooks'
+                url: constService.SERVER_NAME + '/book/allbooks'
             }
             $h.http(config)
                 .then(function(data){

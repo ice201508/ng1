@@ -4,9 +4,9 @@
   angular.module('app.login')
       .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope', '$interval', '$rootScope', '$state', 'bookStorageService', 'loginService', '$h', 'logger'];
+  loginController.$inject = ['$scope', '$interval', '$rootScope', '$state', 'bookStorageService', 'loginService', '$h', 'logger', 'constService'];
 
-  function loginController($scope, $interval, $rootScope, $state, bookStorageService, loginService, $h, logger){
+  function loginController($scope, $interval, $rootScope, $state, bookStorageService, loginService, $h, logger, constService){
     var vm = this;
     vm.userInfo = {};
     vm.go_main_state = go_main_state;
@@ -22,7 +22,7 @@
       //console.log('$scope: ', $scope);
       var config = {
         method: 'POST',
-        url: 'http://127.0.0.1:3005/login',
+        url: constService.SERVER_NAME + '/login',
         data: vm.userInfo,
       }
       if($rootScope.isRegistry){
@@ -66,7 +66,7 @@
       vm.userInfo.password = '';
       var config = {
         method: 'POST',
-        url: 'http://127.0.0.1:3005/registry',
+        url: constService.SERVER_NAME + '/registry',
         params: {data: Date.now()},
       }
       $h.http(config)
@@ -93,7 +93,7 @@
       var vm = this;
       var config = {
         method: 'POST',
-        url: 'http://127.0.0.1:3005/authcode',
+        url: constService.SERVER_NAME + '/authcode',
         params: {email: vm.userInfo.email},
       }
       if(vm.userInfo.email) {

@@ -4,9 +4,9 @@
   angular.module('app.book')
     .controller('editController', editController);
 
-    editController.$inject = ['$scope', '$sce', '$state', '$timeout', '$h', 'logger', 'FileUploader'];
+    editController.$inject = ['$scope', '$sce', '$state', '$timeout', '$h', 'logger', 'FileUploader', 'constService'];
 
-    function editController($scope, $sce, $state, $timeout, $h, logger, FileUploader){
+    function editController($scope, $sce, $state, $timeout, $h, logger, FileUploader, constService){
       var vm = this;
 
       vm.book_detail = {};
@@ -30,7 +30,7 @@
         console.log('file: ', files);
         $h.http({
           method: 'GET',
-          url:'http://127.0.0.1:3005/upload/qiniu_token',
+          url: constService.SERVER_NAME + '/upload/qiniu_token',
         }).then(function(data){
           var formData = new FormData();
           formData.append('file', files[0]);
@@ -61,7 +61,7 @@
         console.log('item: ',item);
         var config = {
           method: 'GET',
-          url: 'http://127.0.0.1:3005/upload/qiniu_token',
+          url: constService.SERVER_NAME + '/upload/qiniu_token',
         }
         $h.http(config)
           .then(function(data){
@@ -79,7 +79,7 @@
         console.log('vm.book_detail: ',vm.book_detail);
         var config = {
           method: 'POST',
-          url: 'http://127.0.0.1:3005/book/edit',
+          url: constService.SERVER_NAME + '/book/edit',
           data: vm.book_detail,
         }
         $h.http(config)

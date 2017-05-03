@@ -4,9 +4,9 @@
     angular.module('app.book')
         .controller('oneBookController', oneBookController);
 
-    oneBookController.$inject = ['$h', 'logger', '$state'];
+    oneBookController.$inject = ['$h', 'logger', '$state', 'constService'];
 
-    function oneBookController($h,logger,$state){
+    function oneBookController($h,logger,$state, constService){
         var vm = this;
         var detail = {};
         console.log($state.params.bookid);
@@ -14,7 +14,7 @@
         function getSepecificBook(){
             var config = {
                 method: 'GET',
-                url: 'http://127.0.0.1:3005/book/onebook/' + $state.params.bookid
+                url: constService.SERVER_NAME + '/book/onebook/' + $state.params.bookid
             }
 
             $h.http(config)
