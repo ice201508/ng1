@@ -98,7 +98,7 @@
       }
       if(vm.userInfo.email) {
         vm.getAuthCodeStart = true;
-        vm.leftTime=10;
+        vm.leftTime=60;
         var clearTimeInterval = $interval(function(){
             if(vm.leftTime<1){
               vm.getAuthCodeStart = false;
