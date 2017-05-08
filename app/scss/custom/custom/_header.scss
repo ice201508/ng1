@@ -1,18 +1,60 @@
 .l-header {
-  .line-height-50{
-    line-height: 50px;
-  }
-  .title {
-    padding: 0 30px;
-  }
-  .message-first {
-    float: left;
-  }
-  .title-font-24 {
-    font-size: 24px;
-  }
-  .bg-dropdown {
-    color: #000;
-    background-color: red;
-  }
+    .l-in-header{
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        .open > .dropdown-menu.top-margin {
+            margin-top: 1px !important;
+        }
+        .l-header-title {
+            display: inline-block;
+            padding: 0 45px;
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            text-align: center;
+            .title-font-24 {
+                font-size: 24px;
+                i {
+                    padding-right: 5px;
+                }
+            }
+        }
+        .l-header-content {
+            padding: 0 0 0 200px;
+            width: 100%;
+            height: 50px;
+            .l-header-content-ui-left {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+                float: left;
+                li{
+                    float: left;
+                    border-right: 1px solid rgba(255,255,255,0.1);
+                    padding: 0 15px;
+                }
+            }
+            .l-header-content-ui-right {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+                float: right;
+                li {
+                    padding: 0 15px;
+                }
+                .dropdown-menu {
+                    right: 0;
+                }
+            }
+        }
+        .l-header-dropdown {
+            padding: 0 10px;
+            border-left: 1px solid #999;
+        }
+    }
+    .bg-dropdown {
+        color: #000;
+    }
 }

@@ -69,3 +69,9 @@ gulp copy --> 手动更改sass目录 修改icon路径
 问题： 绝对定位的元素bottom为0的时候会定位到屏幕底部，没有定位到文档的最底部
 
 需要美化的控件   switch，radio，select，log提示插件，tooltips插件，上传插件
+
+
+
+
+### 布局选择
+一般多个相同的元素用ul li来布局

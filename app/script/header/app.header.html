@@ -1,32 +1,65 @@
-<div ng-controller="headerController as vmHeader" my-header>
-  <div class="line-height-50 clearfix">
-    <div class="pull-left">
-      <div class="title">
-        <a href="#/" class="title-font-24">Admin</a>
-      </div>
-    </div>
-    <div class="pull-left">
-      <div class="dropdown" uib-dropdown>
-        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-          <i class="fa fa-comment-o"></i>
-          <span class="badge badge-info"></span>
-        </a>
-        <div class="dropdown-menu bg-dropdown" uib-dropdown-menu>
-          <p>212</p>
-          <p>212</p>
-          <p>212</p>
+<div class="l-in-header" ng-controller="headerController as vmHeader" my-header>
+    <div>
+        <div class="l-header-title">
+            <div>
+                <a href="#/" class="title-font-24">
+                    <i class="glyphicon glyphicon-th-large"></i>Admin
+                </a>
+            </div>
         </div>
-      </div>
+        <div class="l-header-content">
+            <ul class="l-header-content-ui-left clearfix">
+                <li uib-dropdown>
+                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                        <i class="fa fa-comment-o"></i>
+                        <span class="badge badge-info"></span>
+                    </a>
+                    <div class="dropdown-menu bg-dropdown top-margin with-arrow" uib-dropdown-menu>
+                        <div class="panel">
+                            <div class="panel-heading">123</div>
+                            <p>222</p>
+                        </div>
+                    </div>
+                </li>
+                <li uib-dropdown>
+                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                        <i class="fa fa-comment-o"></i>
+                        <span class="badge badge-info"></span>
+                    </a>
+                    <div class="dropdown-menu bg-dropdown top-margin with-arrow" uib-dropdown-menu>
+                        <div class="panel">
+                            <div class="panel-heading">123</div>
+                            <p>222</p>
+                        </div>
+                    </div>
+                </li>
+                <li uib-dropdown>
+                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                        <i class="fa fa-comment-o"></i>
+                        <span class="badge badge-info"></span>
+                    </a>
+                    <div class="dropdown-menu bg-dropdown top-margin with-arrow" uib-dropdown-menu>
+                        <div class="panel">
+                            <div class="panel-heading">123</div>
+                            <p>222</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="l-header-content-ui-right clearfix">
+                <li uib-dropdown>
+                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                        <i class="fa fa-comment-o"></i>
+                        <span class="badge badge-info"></span>
+                    </a>
+                    <div class="dropdown-menu bg-dropdown top-margin with-arrow" uib-dropdown-menu>
+                        <div class="panel">
+                            <div class="panel-heading">123</div>
+                            <p>222</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <!-- <div class="message-first">
-      <div uib-dropdown is-open="vmHeader.status.isopen">
-        <button type="button" class="btn btn-primary" uib-dropdown-toggle>消息<i class="caret"></i></button>
-        <ul class="dropdown-menu" uib-dropdown-menu>
-          <li>123</li>
-          <li>123</li>
-          <li>323</li>
-        </ul>
-      </div> -->
-    </div>
-  </div>
 </div>
