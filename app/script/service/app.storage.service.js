@@ -8,10 +8,27 @@
 
   function bookStorageService(localStorageService){
     return {
+      setUserInfo: setUserInfo,
+      getUserInfo: getUserInfo,
       userLoginSet: userLoginSet,
       userLoginGet: userLoginGet,
       loginAuthCodeCookieSet: loginAuthCodeCookieSet,
       loginAuthCodeCookieGet: loginAuthCodeCookieGet,
+    }
+
+    var user = {};
+
+    function setUserInfo(param){
+        user = {
+            uid: param.uid,
+            email: param.email,
+        };
+        localStorageService.set('userInfo', user);
+        return;
+    }
+
+    function getUserInfo(){
+        return localStorageService.get('userInfo');
     }
 
     function userLoginSet(param){

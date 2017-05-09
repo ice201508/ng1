@@ -40,8 +40,9 @@
                     </a>
                     <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
                         <div class="panel panel-no-margin">
-                            <div class="panel-heading">123</div>
-                            <p>222</p>
+                            <div class="panel-heading">
+                                <a ng-click="vmHeader.getUserInfo()">getUserInfo</a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -77,9 +78,10 @@
                     </a>
                     <div class="dropdown-menu top-margin with-arrow with-arrow-right dropdown-scaleIn dropdown-menu-top-right" uib-dropdown-menu>
                         <div class="panel panel-no-margin">
-                            <div>
+                            <div class="panel-heading">
                                 <p>
-                                    12s
+                                    <span class="profile-icon glyphicon glyphicon-user"></span>
+                                    <span>{{vmHeader.status.email}}</span>
                                 </p>
                             </div>
                         </div>

@@ -18,6 +18,7 @@
 
     function go_main_state(){
       var vm = this;
+      var pattern = /^\w+[\w-]*@[a-z0-9]+\.com|^root$/;
       //console.log('this: ', this);
       //console.log('$scope: ', $scope);
       var config = {
@@ -32,6 +33,7 @@
           loginService.login(config)
             .then(function(data){
               logger.success('注册成功，并登录');
+              bookStorageService.setUserInfo(data);
               bookStorageService.userLoginSet(true);
               $rootScope.isLogin = bookStorageService.userLoginGet();
               $state.go('main.dashboard');
@@ -40,13 +42,14 @@
               logger.error(e.message);
             })
           } else {
-            logger.error('请输入用户名、密码或验证码');
+            logger.error('请输入正确的用户名、密码或验证码');
           }
       } else {
-          if(vm.userInfo.email && vm.userInfo.password){
+          if(vm.userInfo.email && vm.userInfo.password && pattern.test($.trim(vm.userInfo.email))){  //去掉字符串首位空格
             loginService.login(config)
               .then(function(data){
                 logger.success(data.message);
+                bookStorageService.setUserInfo(data);
                 bookStorageService.userLoginSet(true);
                 $rootScope.isLogin = bookStorageService.userLoginGet();
                 $state.go('main.dashboard');
@@ -55,7 +58,7 @@
                 logger.error(e.message);
               })
           } else {
-            logger.error('请输入用户名或密码');
+            logger.error('请输入正确的用户名或密码');
           }
         }
     }

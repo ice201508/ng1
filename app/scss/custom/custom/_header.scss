@@ -77,6 +77,9 @@
                 }
                 .dropdown-menu {
                     color: #000;
+                    a {
+                        cursor: pointer;
+                    }
                 }
                 .badge {
                     background-color: rgba(0,0,0,0);
@@ -91,6 +94,9 @@
                 padding-left: 0;
                 margin: 0;
                 float: right;
+                p {
+                    margin-bottom: 0;
+                }
                 li {
                     float: right;
                     padding: 0 15px;
@@ -99,6 +105,10 @@
                     right: 10px;
                     left: auto;
                     color: #000;
+                    .profile-icon {
+                        margin-right: 10px;
+                        color: #1c7ebb;
+                    }
                 }
                 .img_30_30 {
                     width: 30px;
