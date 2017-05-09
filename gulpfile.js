@@ -49,6 +49,10 @@ gulp.task('copy_assets_dist', function(){
   return gulp.src(config.font)
             .pipe(gulp.dest('dist/assets/fonts/'))
 })
+gulp.task('copy_image_dist', function(){
+  return gulp.src(config.image)
+            .pipe(gulp.dest('dist/assets/images/'))
+})
 gulp.task('copy_favicon_dist', function(){
   return gulp.src('app/favicon.ico')
             .pipe(gulp.dest('dist'))
@@ -65,7 +69,7 @@ gulp.task('copy_html', function(){
             .pipe(gulp.dest('dist'))
 })
 
-gulp.task('build', ['scss_min', 'copy_assets_dist', 'copy_html', 'copy_favicon_dist'], function(){
+gulp.task('build', ['scss_min', 'copy_assets_dist', 'copy_image_dist', 'copy_html', 'copy_favicon_dist'], function(){
   return gulp
       .src('app/index.html')
       .pipe($.useref())

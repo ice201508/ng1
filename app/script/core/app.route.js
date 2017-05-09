@@ -56,6 +56,12 @@
       controller: 'oneBookController',
       controllerAs: 'vmOneBook',
     })
+    .state('main.profile', {
+      url: '/book/profile',
+      templateUrl: 'script/profile/app.profile.html',
+      controller: 'profileController',
+      controllerAs: 'vmProfile',
+    })
 
     $urlRouterProvider.otherwise('/login');
     $locationProvider.hashPrefix('');

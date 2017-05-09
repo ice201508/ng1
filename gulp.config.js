@@ -11,6 +11,9 @@ module.exports = function(){
             'node_modules/flat-ui/fonts/**/*',
             'node_modules/font-awesome/fonts/*'
         ],
+        image: [
+            'app/assets/images/**/*'
+        ],
         lib: [
             'node_modules/angular/angular.min.js',
             'node_modules/angular-animate/angular-animate.min.js',
@@ -38,6 +41,7 @@ module.exports = function(){
             'app/script/book/app.edit.html',
             'app/script/book/app.onebook.html',
             'app/script/book/app.allbook.html',
+            'app/script/profile/app.profile.html',
         ],
     }
 

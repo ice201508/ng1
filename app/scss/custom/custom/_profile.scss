@@ -1,0 +1,106 @@
+.l-profile-head{
+    .img_100 {
+        width: 100px;
+        height: 100px;
+        padding: 5px 10px;
+        border-radius: 50%;
+    }
+    .l-profile-content {
+        padding: 5px 10px;
+        line-height: 100px;
+        margin-top: 15px;
+        background-color: rgba(0,0,0,0);
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.panel-no-border {
+    border: none;
+}
+
+.l-profile-ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+        padding: 10px 20px;
+        border-bottom: 1px solid #f3f3f3;
+        .badge-danger {
+            background-color: #e94b3b;
+        }
+        .badge-warning {
+            background-color: #ffb61c;
+        }
+        .badge-info {
+            background-color: #2ec1cc;
+        }
+        .badge-success {
+            background-color: #23ae89;
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+}
+
+.panel-followers {
+    text-align: center;
+    .size-h1 {
+        font-size: 36px;
+    }
+    .bg-facebook{
+        color: #fff;
+        background-color: #335397;
+        padding: 40px 0;
+    }
+    .bg-twitter {
+        background-color: #00c7f7;
+        color: #fff;
+        padding: 40px 0;
+    }
+    .l-followers-content {
+        padding: 20px 0;
+        ul {
+            list-style-type: none;
+            margin-bottom: 0;
+            padding-left: 0;
+            text-align: center;
+            .l-follower-right-border {
+                border-right: 1px solid #eeeeee;
+            }
+            li {
+                float: none;
+                display: table-cell;
+                padding: 10px;
+                width: 1%;
+                .size-h3 {
+                    font-size: 24px;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.l-profile-user {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+        border-bottom: 1px solid #eeeeee;
+        padding: 5px 0 10px 0;
+        .profile-icon {
+            margin-right: 10px;
+            color: #1c7ebb;
+        }
+        label {
+            width: 100px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    }
+}
