@@ -19,6 +19,8 @@
     function go_main_state(){
       var vm = this;
       var pattern = /^\w+[\w-]*@[a-z0-9]+\.com|^root$/;
+      var patternIsRegistry = /^\w+[\w-]*@[a-z0-9]+\.com/;
+      var patternNumber = /^\d{4}$/;
       //console.log('this: ', this);
       //console.log('$scope: ', $scope);
       var config = {
@@ -27,7 +29,7 @@
         data: vm.userInfo,
       }
       if($rootScope.isRegistry){
-        if(vm.userInfo.email && vm.userInfo.password && vm.userInfo.auth_code) {
+        if(vm.userInfo.email && vm.userInfo.password && vm.userInfo.auth_code && patternNumber.test(vm.userInfo.auth_code) && patternIsRegistry.test(vm.userInfo.email)) {
           vm.userInfo.auth_code_confirm = bookStorageService.loginAuthCodeCookieGet();
           vm.userInfo.auth_code = parseInt(vm.userInfo.auth_code).toString();
           loginService.login(config)

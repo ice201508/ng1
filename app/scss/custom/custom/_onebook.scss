@@ -1,0 +1,42 @@
+.l-onebook-tablecell {
+    ul:first-child {
+        list-style-type: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        display: table;
+        border-bottom: 1px solid #eee;
+        li {
+            display: table-cell;
+            padding: 0 10px;
+            width: 1%;
+            text-align: center;
+            vertical-align: middle;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        li:not(:first-child) {
+            border-left: 1px solid #eeeeee;
+        }
+    }
+    ul:nth-child(2) {
+        list-style-type: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        display: table;
+        border: 1px solid red;
+        li {
+            display: table-cell;
+            padding: 0 10px;
+            width: 1%;
+            text-align: center;
+            vertical-align: middle;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        li:not(:first-child) {
+            border-left: 1px solid #eeeeee;
+        }
+    }
+}
