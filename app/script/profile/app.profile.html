@@ -86,17 +86,22 @@
                         <li>
                             <i class="profile-icon glyphicon glyphicon-user"></i>
                             <label>姓名</label>
-                            <span>ss</span>
+                            <span>{{::vmProfile.userInfo.email || "您需要管理权权限:("}}</span>
                         </li>
                         <li>
                             <i class="profile-icon glyphicon glyphicon-home"></i>
                             <label>个人主页</label>
-                            <span>www.leijiuling.com</span>
+                            <a href='http://www.leijiuling.com'>www.leijiuling.com</a>
+                        </li>
+                        <li>
+                            <i class="profile-icon fa-add fa fa-github"></i>
+                            <label>github</label>
+                            <a href='https://github.com/ice201508'>https://github.com/ice201508</a>
                         </li>
                         <li>
                             <i class="profile-icon glyphicon glyphicon-home"></i>
                             <label>购书页面</label>
-                            <span>www.leijiuling.com/buy</span>
+                            <a  href='http://www.leijiuling.com/buy'>购书</a>
                         </li>
                         <li>
                             <i class="profile-icon glyphicon glyphicon-envelope"></i>
@@ -106,7 +111,7 @@
                         <li>
                             <i class="profile-icon glyphicon glyphicon-earphone"></i>
                             <label>电话</label>
-                            <span>6666666</span>
+                            <span>{{::vmProfile.userInfo.tel || "您需要管理权权限:("}}</span>
                         </li>
                     </ul>
                 </div>

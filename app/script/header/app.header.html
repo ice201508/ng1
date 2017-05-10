@@ -1,93 +1,98 @@
 <div class="l-in-header" ng-controller="headerController as vmHeader" my-header>
     <div>
         <div class="l-header-title">
-            <div>
+            <div class="l-header-title-icon">
                 <a href="#/" class="title-font-24">
                     <i class="glyphicon glyphicon-th-large"></i>Admin
                 </a>
+                <div class="l-header-title-icon-768">
+                    <a href="javascript:;" class="title-font-24" ng-click="vmHeader.toggleNav()">
+                        <i class="glyphicon glyphicon-align-justify"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="l-header-content">
-            <ul class="l-header-content-ui-left clearfix">
-                <li>
-                    <a href='http://www.leijiuling.com/buy' target="_blank" title="购书地址">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href='https://github.com/ice201508' target="_blank" title="项目地址">
-                        <i class="fa fa-github"></i>
-                    </a>
-                </li>
-                <li uib-dropdown>
-                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-                        <i class="fa fa-comment-o"></i>
-                        <span class="badge badge-info">3</span>
-                    </a>
-                    <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-top-left" uib-dropdown-menu>
-                        <div class="panel panel-no-margin">
-                            <div class="panel-heading">123</div>
-                            <p>
-                                <a ui-sref="main.user">用户管理</a>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li uib-dropdown>
-                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-                        <i class="fa fa-bell"></i>
-                        <span class="badge badge-info">4</span>
-                    </a>
-                    <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
-                        <div class="panel panel-no-margin">
-                            <div class="panel-heading">
-                                <a ng-click="vmHeader.getUserInfo()">getUserInfo</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li uib-dropdown>
-                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-                        <i class="fa fa-envelope"></i>
-                        <span class="badge badge-info">12</span>
-                    </a>
-                    <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
-                        <div class="panel panel-no-margin">
-                            <div class="panel-heading">123</div>
-                            <p>222</p>
-                        </div>
-                    </div>
-                </li>
-                <li uib-dropdown>
-                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-                        <i class="fa fa fa-cog"></i>
-                    </a>
-                    <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
-                        <div class="panel panel-no-margin">
-                            <div class="panel-heading">123</div>
-                            <p>222</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <ul class="l-header-content-ui-right clearfix">
-                <li uib-dropdown>
-                    <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
-                        <img src="../../assets/images/touxiang2.jpg" alt="个人信息" title="个人信息" class="img_30_30">
-                        <span class="img_name">Lucy</span>
-                    </a>
-                    <div class="dropdown-menu top-margin with-arrow with-arrow-right dropdown-scaleIn dropdown-menu-top-right" uib-dropdown-menu>
-                        <div class="panel panel-no-margin">
-                            <div class="panel-heading">
+            <div class="l-header-content-768 clearfix">
+                <ul class="l-header-content-ui-left clearfix">
+                    <li>
+                        <a href='http://www.leijiuling.com/buy' target="_blank" title="购书地址">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://github.com/ice201508' target="_blank" title="项目地址">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li uib-dropdown>
+                        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                            <i class="fa fa-comment-o"></i>
+                            <span class="badge badge-info">3</span>
+                        </a>
+                        <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-top-left" uib-dropdown-menu>
+                            <div class="panel panel-no-margin">
+                                <div class="panel-heading">123</div>
                                 <p>
-                                    <span class="profile-icon glyphicon glyphicon-user"></span>
-                                    <span>{{vmHeader.status.email}}</span>
+                                    <a ui-sref="main.user">用户管理</a>
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    <li uib-dropdown>
+                        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge badge-info">4</span>
+                        </a>
+                        <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
+                            <div class="panel panel-no-margin">
+                                <div class="panel-heading">
+                                    <a ng-click="vmHeader.getUserInfo()">getUserInfo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li uib-dropdown>
+                        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge badge-info">12</span>
+                        </a>
+                        <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
+                            <div class="panel panel-no-margin">
+                                <div class="panel-heading">123</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li uib-dropdown>
+                        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                            <i class="fa fa fa-cog"></i>
+                        </a>
+                        <div class="dropdown-menu top-margin with-arrow dropdown-scaleIn dropdown-menu-center" uib-dropdown-menu>
+                            <div class="panel panel-no-margin">
+                                <div class="panel-heading">123</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="l-header-content-ui-right clearfix">
+                    <li uib-dropdown>
+                        <a href="javascript:;" uib-dropdown-toggle class="dropdown-toggle">
+                            <img src="../../assets/images/touxiang2.jpg" alt="个人信息" title="个人信息" class="img_30_30">
+                            <span class="img_name">Lucy</span>
+                        </a>
+                        <div class="dropdown-menu top-margin with-arrow with-arrow-right dropdown-scaleIn dropdown-menu-top-right" uib-dropdown-menu>
+                            <div class="panel panel-no-margin">
+                                <div class="panel-heading">
+                                    <p>
+                                        <span class="profile-icon glyphicon glyphicon-user"></span>
+                                        <span>{{vmHeader.status.email}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

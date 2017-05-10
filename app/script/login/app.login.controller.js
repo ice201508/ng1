@@ -29,7 +29,7 @@
         data: vm.userInfo,
       }
       if($rootScope.isRegistry){
-        if(vm.userInfo.email && vm.userInfo.password && vm.userInfo.auth_code && patternNumber.test(vm.userInfo.auth_code) && patternIsRegistry.test(vm.userInfo.email)) {
+        if(vm.userInfo.email && vm.userInfo.password && vm.userInfo.auth_code && patternNumber.test($.trim(vm.userInfo.auth_code)) && patternIsRegistry.test($.trim(vm.userInfo.email))) {
           vm.userInfo.auth_code_confirm = bookStorageService.loginAuthCodeCookieGet();
           vm.userInfo.auth_code = parseInt(vm.userInfo.auth_code).toString();
           loginService.login(config)

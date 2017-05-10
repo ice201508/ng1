@@ -92,10 +92,13 @@
     padding-left: 0;
     li {
         border-bottom: 1px solid #eeeeee;
-        padding: 5px 0 10px 0;
+        padding: 10px 0 5px 0;
         .profile-icon {
             margin-right: 10px;
             color: #1c7ebb;
+            &.fa-add {
+                font-size:18px;
+            }
         }
         label {
             width: 100px;

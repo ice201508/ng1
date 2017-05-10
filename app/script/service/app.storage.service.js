@@ -16,7 +16,10 @@
       loginAuthCodeCookieGet: loginAuthCodeCookieGet,
     }
 
-    var user = {};
+    var user = {
+      uid: null,
+      email: null,
+    };
 
     function setUserInfo(param){
         user = {

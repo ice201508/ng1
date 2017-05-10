@@ -5,14 +5,15 @@
             .controller('headerController', headerController);
 
     //这种注入方式便于单元测试以及阅读
-    headerController.$inject = ['$filter', '$timeout', 'bookStorageService'];
+    headerController.$inject = ['$rootScope', '$filter', '$timeout', 'bookStorageService'];
 
-    function headerController($filter, $timeout, bookStorageService){
+    function headerController($rootScope, $filter, $timeout, bookStorageService){
         var vm = this;
         vm.status = {
             email: bookStorageService.getUserInfo().email,
         }
         vm.getUserInfo = getUserInfo;
+        vm.toggleNav = toggleNav;
         vm.ele = angular.element(document.querySelector('.l-header'));
 
         // $timeout(function(){
@@ -21,6 +22,11 @@
 
         function getUserInfo(){
             console.log(bookStorageService.getUserInfo());
-        }        
+        }
+
+        function toggleNav(){
+            console.log($rootScope.toggle_nav);
+            $rootScope.toggle_nav = !$rootScope.toggle_nav;
+        }
     }
 })();

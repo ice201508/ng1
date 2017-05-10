@@ -24,6 +24,9 @@
     //是否是注册界面
     $rootScope.isRegistry = false;
 
+    //小屏动态切换nav
+    $rootScope.toggle_nav = false;
+
     function stateChangeStart(event, toState, toParams, fromState, fromParams, options){
       console.log("路由跳转和拦截器哪个先执行,这里是路由跳转  ", toState.url);
       $rootScope.isLogin = bookStorageService.userLoginGet();

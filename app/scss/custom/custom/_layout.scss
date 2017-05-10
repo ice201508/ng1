@@ -30,29 +30,55 @@ body {
   -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 }
 
-.l-main-container {
-  display: block;
-  position: relative;
-  overflow: auto;
-  top: 50px;
-  width: 100%;
-  .l-nav{
-    position: fixed;
-    top: 50px;
-    bottom: 0;
-    width: 200px;
-    padding: 5px 10px;
-    overflow: auto;
-    height: 100%;
-    background-color: #263238;
-  }
-  .l-content {
-    position: relative;
-    left: 200px;
-    margin-right: 200px;
-    background-color: rgba(0,0,0,0.05);
-  }
+@media screen and(min-width:768px) {
+    .l-main-container {
+        display: block;
+        position: relative;
+        overflow: auto;
+        top: 50px;
+        width: 100%;
+        .l-nav{
+            position: fixed;
+            top: 50px;
+            bottom: 0;
+            width: 200px;
+            padding: 5px 10px;
+            overflow: auto;
+            height: 100%;
+            background-color: #263238;
+        }
+        .l-content {
+            // position: relative;
+            // left: 200px;
+            // margin-right: 200px;
+            padding-left: 200px;
+            background-color: rgba(0,0,0,0.05);
+        }
+    }
 }
+
+@media screen and (max-width: 767px){
+    .l-main-container {
+        display: block;
+        position: relative;
+        overflow: auto;
+        top: 100px;
+        width: 100%;
+        .l-nav{
+            display: none;
+            &.toggle-nav-class {
+                display: block;
+            }
+        }
+        .l-content {
+            // position: relative;
+            // left: 200px;
+            // margin-right: 200px;
+            background-color: rgba(0,0,0,0.05);
+        }
+    }
+}
+
 
 .page {
   padding: 15px;
