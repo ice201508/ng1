@@ -1,11 +1,18 @@
-(function(){
-	'use strict';
+;(function(){
+    'use strict';
 
-	angular.module('app.nav')
-		.controller('navController', navController);
+    angular.module('app.nav')
+        .controller('navController', navController);
 
-	function navController(){
-		var vm = this;
-		vm.name = "message";
-	}
+    navController.$inject = ['bookStorageService'];
+
+    function navController(bookStorageService){
+        var vm = this;
+        vm.user = bookStorageService.getUserInfo();
+        vm.confirAdminAccess = confirAdminAccess;
+
+        function confirAdminAccess(){
+            return vm.user && vm.user.email && vm.user.email === 'root';
+        }
+    }
 })();

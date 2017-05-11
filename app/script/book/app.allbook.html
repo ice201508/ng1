@@ -17,16 +17,22 @@
                 <th>价格</th>
                 <th>图片</th>
                 <th>创建时间</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="item in vmAllBook.books track by $index" ng-click="vmAllBook.selectOne(item.bid)">
+              <tr ng-repeat="item in vmAllBook.books track by $index">
                 <th>{{$index+1}}</th>
                 <th>{{item.bname}}</th>
                 <th>{{item.intro}}</th>
                 <th>{{item.price}}</th>
                 <th>{{item.img_url}}</th>
                 <th>{{item.create_time}}</th>
+                <th>
+                  <button class="btn btn-primary btn-xs" ng-click="vmAllBook.selectOne(item.bid)">详情</button>
+                  <button class="btn btn-warning btn-xs" ng-click="vmAllBook.editOne(item.bid)">编辑</button>
+                  <button class="btn btn-danger btn-xs" ng-click="vmAllBook.deleteOne(item.bid)">删除</button>
+                </th>
               </tr>
             </tbody>
           </table>

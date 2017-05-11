@@ -1,19 +1,19 @@
 <div>
-    <ul>
-        <li class="nav-font-size">
-            <a ui-sref="main.dashboard">整体概览</a>
+    <ul class="clearfix">
+        <li>
+            <a ui-sref="main.dashboard" ui-sref-active="active">整体概览</a>
         </li>
-        <li class="nav-font-size">
-            <a ui-sref="main.book.all_book_info">图书管理</a>
+        <li>
+            <a ui-sref="main.book.all_book_info" ui-sref-active="active">图书管理</a>
         </li>
-        <li class="nav-font-size">
-            <a ui-sref="main.user">用户管理</a>
+        <li ng-if="vmNav.confirAdminAccess()">
+            <a ui-sref="main.user" ui-sref-active="active">用户管理</a>
         </li>
-        <li class="nav-font-size">
-            <a ui-sref="main.order">订单管理</a>
+        <li>
+            <a ui-sref="main.order" ui-sref-active="active">订单管理</a>
         </li>
-        <li class="nav-font-size">
-            <a ui-sref="main.profile">个人信息</a>
+        <li>
+            <a ui-sref="main.profile" ui-sref-active="active">个人信息</a>
         </li>
     </ul>
 </div>

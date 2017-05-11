@@ -18,17 +18,79 @@ body {
 }
 
 .l-header{
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  background-color: #263238;
-  color: #fff;
-  font-size: 20px;
-  box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
-  -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
-  -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #263238;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 }
+
+
+@media screen and (max-width: 767px){
+    .l-main-container {
+        display: block;
+        position: relative;
+        overflow: auto;
+        top: 100px;
+        &.toggle-nav-class {
+            top: 150px;
+        }
+        width: 100%;
+        .l-nav{
+            display: none;
+            &.toggle-nav-class {
+                display: block;
+                position: fixed;
+                top:100px;
+                z-index: 100;
+                left:0;
+                right: 0;
+                background-color: #263238;
+                min-width: 450px;
+                ul {
+                    display: table;
+                    overflow: auto;
+                    list-style-type: none;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                    margin: 0 auto;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-size: 15px;
+                    li {
+                        float: left;
+                        a {
+                            display: block;
+                            height: 50px;
+                            line-height: 50px;
+                            padding: 0px 10px;
+                            border-radius: 5px;
+                        }
+                        .active {
+                            background-color: #252627;
+                        }
+                    }
+                    li:hover {
+                        border-radius: 5px;
+                        background-color: #182125;
+                    }
+                }
+            }
+        }
+        .l-content {
+            // position: relative;
+            // left: 200px;
+            // margin-right: 200px;
+            background-color: rgba(0,0,0,0.05);
+        }
+    }
+}
+
 
 @media screen and(min-width:768px) {
     .l-main-container {
@@ -46,6 +108,29 @@ body {
             overflow: auto;
             height: 100%;
             background-color: #263238;
+            ul {
+                font-size: 18px;
+                vertical-align: middle;
+                li {
+                    a {
+                        display: block;
+                        height: 50px;
+                        line-height: 50px;
+                        padding: 0px 10px;
+                        border-right: none;
+                        // transition: border-right 1s;
+                        // -webkit-transition: border-right 1s;
+                    }
+                    .active {
+                        // background-color: #252627;
+                        border-right: 2px solid #16a085;
+                    }
+                }
+                li:hover {
+                    // background-color: #182125;
+                    border-right: 2px solid #16a085;
+                }
+            }
         }
         .l-content {
             // position: relative;
@@ -57,29 +142,11 @@ body {
     }
 }
 
-@media screen and (max-width: 767px){
-    .l-main-container {
-        display: block;
-        position: relative;
-        overflow: auto;
-        top: 100px;
-        width: 100%;
-        .l-nav{
-            display: none;
-            &.toggle-nav-class {
-                display: block;
-            }
-        }
-        .l-content {
-            // position: relative;
-            // left: 200px;
-            // margin-right: 200px;
-            background-color: rgba(0,0,0,0.05);
-        }
-    }
-}
-
-
 .page {
   padding: 15px;
+}
+
+::selection {
+    color: white;
+    background: #0aa284;
 }

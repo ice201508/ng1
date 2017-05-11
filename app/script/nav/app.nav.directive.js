@@ -11,7 +11,7 @@
 			replace: true,
 			templateUrl: '/script/nav/app.nav.html',
 			controller: 'navController',
-			controllerAs: 'nav',
+			controllerAs: 'vmNav',
 			link: link,
 		};
 

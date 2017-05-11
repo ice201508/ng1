@@ -76,7 +76,7 @@ gulp copy --> 手动更改sass目录 修改icon路径
 ### 布局选择
 一般多个相同的元素用ul li来布局
 
-ul > li  :not(:first-child){
+ul > li :not(:first-child){   //冒号前面不能有空格
     // > 表示仅选择ul的直接子元素li，不包括孙子li
     //这是选择除第一个li外的其他所有li
 }

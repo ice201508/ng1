@@ -1,6 +1,6 @@
 <div id="l-app-coninter">
   <div class="l-header" ng-include="'./script/header/app.header.html'"></div>
-  <div class="l-main-container">
+  <div class="l-main-container" ng-class="{'toggle-nav-class': toggle_nav}">
     <div class="l-nav" ng-class="{'toggle-nav-class': toggle_nav}" my-nav></div>
     <div class="l-content">
       <ui-view></ui-view>
