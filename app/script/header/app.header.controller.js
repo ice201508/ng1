@@ -14,6 +14,7 @@
         }
         vm.getUserInfo = getUserInfo;
         vm.toggleNav = toggleNav;
+        vm.back = back;
         vm.ele = angular.element(document.querySelector('.l-header'));
 
         // $timeout(function(){
@@ -27,6 +28,10 @@
         function toggleNav(){
             console.log($rootScope.toggle_nav);
             $rootScope.toggle_nav = !$rootScope.toggle_nav;
+        }
+
+        function back(){
+            history.back();
         }
     }
 })();
