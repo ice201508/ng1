@@ -57,6 +57,17 @@ gulp.task('copy_favicon_dist', function(){
   return gulp.src('app/favicon.ico')
             .pipe(gulp.dest('dist'))
 })
+gulp.task('copy_tpls_dist', function(){
+    var options = {
+        removeComments: true,  //清除html注释
+        collapseWhitespace: true, //压缩html
+        minifyJS: true, //压缩页面js
+        minifyCSS: true, //压缩页面css
+    }
+    return gulp.src('app/tpls/**/*')
+            .pipe($.htmlmin(options))
+            .pipe(gulp.dest('dist/tpls/'))
+})
 gulp.task('copy_html', function(){
     var options = {
         removeComments: true,  //清除html注释
@@ -69,7 +80,7 @@ gulp.task('copy_html', function(){
             .pipe(gulp.dest('dist'))
 })
 
-gulp.task('build', ['scss_min', 'copy_assets_dist', 'copy_image_dist', 'copy_html', 'copy_favicon_dist'], function(){
+gulp.task('build', ['scss_min', 'copy_assets_dist', 'copy_image_dist', 'copy_html', 'copy_favicon_dist', 'copy_tpls_dist'], function(){
   return gulp
       .src('app/index.html')
       .pipe($.useref())

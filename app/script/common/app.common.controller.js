@@ -4,13 +4,11 @@
     angular.module('app.common')
         .controller('otherCtrl', otherCtrl)
 
-    otherCtrl.$inject = ['$uibModalInstance', 'items'];
+    otherCtrl.$inject = ['$uibModalInstance'];
 
-    function otherCtrl($uibModalInstance, items){
+    function otherCtrl($uibModalInstance){
         var vm = this;
-        vm.name = 'self modal'
-        vm.items = items;
-        console.log('items: ',items);
+        vm.name = 'self modal';
     }
 
 

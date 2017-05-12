@@ -11,6 +11,7 @@
 
     //custom modules
     'app.service',
+    'app.common',
     'app.filter',
     'app.nav',
     'app.header',
