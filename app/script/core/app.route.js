@@ -39,7 +39,7 @@
       template: '<div ui-view></div>'
     })
     .state('main.book.edit_book_info',{
-      url: '/book/letter/edit',
+      url: '/book/letter/edit/:bookid',
       templateUrl: 'script/book/app.edit.html',
       controller: 'editController',
       controllerAs: 'vmEdit',

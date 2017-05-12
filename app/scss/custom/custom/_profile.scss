@@ -20,6 +20,15 @@
     border: none;
 }
 
+.panel-heading {
+    &.panel-heading-no-border {
+        border-bottom: 0;
+        & > span{
+            padding-right: 10px;
+        }
+    }
+}
+
 .l-profile-ul {
     list-style-type: none;
     margin-bottom: 0;

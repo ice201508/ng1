@@ -2,11 +2,13 @@
     'use strict';
 
     angular.module('app.book')
-        .controller('allBookController', allBookController);
+        .controller('allBookController', allBookController)
+        .controller('confirmCtrl', confirmCtrl)
 
-    allBookController.$inject = ['$h', 'logger', '$state', 'constService'];
+    allBookController.$inject = ['$h', '$uibModal', 'logger', '$state', 'constService'];
+    confirmCtrl.$inject = ['$uibModalInstance', 'items'];
 
-    function allBookController($h, logger, $state, constService){
+    function allBookController($h, $uibModal, logger, $state, constService){
         var vm = this;
         vm.books = [];
         vm.addNewBook = addNewBook;
@@ -15,7 +17,7 @@
         vm.deleteOne = deleteOne;
 
         function addNewBook(){
-            $state.go('main.book.edit_book_info');
+            $state.go('main.book.edit_book_info', {bookid: 0});
         }
 
         function selectOne(id){
@@ -23,7 +25,7 @@
         }
 
         function editOne(id){
-            $state.go('main.book.edit_book_info');
+            $state.go('main.book.edit_book_info', {bookid: id});
         }
 
         function getAllBook(){
@@ -40,7 +42,7 @@
                 })
         }
 
-        function deleteOne(id){
+        function deleteOneAjax(id){
             var config = {
                 method: 'POST',
                 url: constService.SERVER_NAME + '/book/deleteOne',
@@ -58,6 +60,46 @@
                 })
         }
 
+        function deleteOne(id){
+            var modalInstance = $uibModal.open({
+                animation: true,  //是否开启动画
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '../../tpls/confirm.html',
+                controller: 'confirmCtrl',
+                controllerAs: '$ctrl',
+                size: 'sm',
+                // appendTo: undefined,
+                resolve: {
+                    items: function(){
+                        return [1,2,3];
+                    }
+                } 
+            })
+
+            modalInstance.result.then(function(item){
+                deleteOneAjax(id)
+            }, function(e){
+                console.log('456: ',e);
+            })
+        }
+
         getAllBook()
+    }
+
+    function confirmCtrl($uibModalInstance, items){
+        var vm = this;
+        vm.name = 123
+        vm.items = [];
+        vm.ok = ok;
+        vm.cancel = cancel;
+
+        function ok(){
+          $uibModalInstance.close('传输');
+        }
+
+        function cancel(){
+          $uibModalInstance.dismiss('cancel');
+        }
     }
 })();

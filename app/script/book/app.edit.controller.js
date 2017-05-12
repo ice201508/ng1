@@ -8,7 +8,7 @@
 
     function editController($scope, $sce, $state, $timeout, $h, logger, FileUploader, constService){
       var vm = this;
-
+console.log('$state.params.bookid: ',$state.params.bookid);
       vm.book_detail = {};
       vm.submit = submit;
       vm.uploader = new FileUploader({
@@ -90,6 +90,34 @@
           .catch(function(e){
             logger.error('添加书籍出错')
           })
+      }
+
+      function getOneBookDetail(){
+        var config = {
+            method: 'GET',
+            url: constService.SERVER_NAME + '/book/onebook/' + $state.params.bookid
+        }
+        $h.http(config)
+          .then(function(data){
+            vm.book_detail = {
+              bname: data.book[0].bname,
+              author: data.book[0].author,
+              intro: data.book[0].intro,
+              price: data.book[0].price,
+              imgUrl: data.book[0].img_url,
+              detail: data.book[0].detail,
+              rate: data.book[0].rate,
+            }
+            return;
+          })
+          .catch(function(e){
+            logger.error('添加书籍出错')
+            return;
+          })
+      }
+
+      if($state.params.bookid != 0) {
+        getOneBookDetail();
       }
     }
 })();
